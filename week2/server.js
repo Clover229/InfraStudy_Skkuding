@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res)=>{
-    fs.readFile('week2.html', 'utf8', (err, data)=>{
+    fs.readFile('index.html', 'utf8', (err, data)=>{
         if (err){
             res.writeHead(500, {'Content-Type': 'text/plain'});//직접 content type 설정
             console.log('get error:', err);
