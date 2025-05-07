@@ -1,22 +1,36 @@
+# version: '3'
+
+# services:
+#   express:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:3000"
+#     container_name: express
+#     volumes:
+#       - ./data:/app/data  # 데이터 유지
+#   nginx:
+#     image: nginx:latest
+#     ports:
+#       - "80:80"
+#     volumes:
+#       - ./index.html:/usr/share/nginx/html/index.html
+#       - ./nginx.conf:/etc/nginx/nginx.conf
+#     depends_on:
+#       - express
+#     container_name: nginx
+
 version: '3'
 
 services:
-  express:
+  nodejs:
+    container_name: nodejs
     build:
       context: .
       dockerfile: Dockerfile
+    # 또는 `image: <owner>/<image>:<tag>`
     ports:
-      - "3000:3000"
-    container_name: express
+      - 3000:3000
     volumes:
       - ./data:/app/data  # 데이터 유지
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./index.html:/usr/share/nginx/html/index.html
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - express
-    container_name: nginx
