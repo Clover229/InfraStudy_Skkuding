@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "week2:get users",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,15 @@
+meta {
+  name: delete restaurant
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:3000/restaurant
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
